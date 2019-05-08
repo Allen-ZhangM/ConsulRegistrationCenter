@@ -1,0 +1,22 @@
+{
+  "services": [
+    {
+      "id": "RegistrationCenter",
+      "name": "RegistrationCenter",
+      "tags": [
+        "primary"
+      ],
+      "address": "10.1.100.240",
+      "port": 8080,
+      "checks": [
+        {
+          "http": "http://10.1.100.240:8080/api/health/check",
+          "tls_skip_verify": false,
+          "method": "GET",
+          "interval": "10s",
+          "header": {"content-type":["application/x-www-form-urlencoded", "baz"]}
+        }
+      ]
+    }
+  ]
+}
